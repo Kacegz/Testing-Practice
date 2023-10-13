@@ -1,4 +1,9 @@
-import { capitalize, reverseString, calculator } from "./script.js";
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  analyzeArray,
+} from "./script.js";
 
 test("Is capitalized", () => {
   expect(capitalize("test")).toBe("Test");
@@ -25,4 +30,17 @@ test("Multiplication", () => {
 });
 test("Division", () => {
   expect(calculator.divide(9, 3)).toBe(3);
+});
+
+const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+test("Analized array returns an object", () => {
+  expect(typeof object).toBe("object");
+});
+test("Analized array returns valid data", () => {
+  expect(object).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
