@@ -2,6 +2,7 @@ import {
   capitalize,
   reverseString,
   calculator,
+  caesarCipher,
   analyzeArray,
 } from "./script.js";
 
@@ -20,7 +21,7 @@ test("Works with numbers", () => {
 });
 
 test("Addition", () => {
-  expect(calculator.add(1, 2)).toBe(3);
+  expect(calculator.add(1, 32)).toBe(33);
 });
 test("Subtraction", () => {
   expect(calculator.subtract(6, 3)).toBe(3);
@@ -30,6 +31,10 @@ test("Multiplication", () => {
 });
 test("Division", () => {
   expect(calculator.divide(9, 3)).toBe(3);
+});
+
+test("Caesar", () => {
+  expect(caesarCipher("Testz.", 1)).toBe("Uftua/");
 });
 
 const object = analyzeArray([1, 8, 3, 4, 2, 6]);

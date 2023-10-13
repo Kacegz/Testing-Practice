@@ -21,6 +21,20 @@ class calculator {
     return x / y;
   }
 }
+function caesarCipher(string, shift) {
+  let solution = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] !== "z") {
+      solution = solution.concat(
+        "",
+        String.fromCharCode(string.charCodeAt(i) + shift)
+      );
+    } else {
+      solution = solution.concat("", "a");
+    }
+  }
+  return solution;
+}
 
 function analyzeArray(array) {
   let sum = 0;
@@ -39,5 +53,4 @@ function analyzeArray(array) {
   let average = sum / length;
   return { average, min, max, length };
 }
-
-export { capitalize, reverseString, calculator, analyzeArray };
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
